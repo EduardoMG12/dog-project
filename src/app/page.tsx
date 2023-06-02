@@ -1,13 +1,12 @@
 /* eslint-disable react/no-unescaped-entities */
 "use client";
-import { useEffect } from "react";
+
 import Image from "next/image";
 import Link from "next/link";
 import SvgContainer from "@/components/SVGs/SvgContainer";
 import DogLogo from "@/components/SVGs/DogLogo";
-import { config } from "dotenv";
 
-config();
+
 export default function Home() {
   return (
     <>
