@@ -1,8 +1,10 @@
+/* eslint-disable react/no-unescaped-entities */
 "use client";
-import DogLogo from "@/components/SVGs/DogLogo";
-import Link from "next/link";
 import React, { useEffect, useState } from "react";
-import fetchData, { IApiResponse, IBreed } from "../../utils/req";
+import fetchData, { IApiResponse } from "../../utils/req";
+import Image from "next/image";
+import Header from "@/components/Header";
+import Link from "next/link";
 
 export const BreedsPage = () => {
   const [dogBreeds, setDogBreeds] = useState<IApiResponse[] | undefined>();
@@ -24,36 +26,76 @@ export const BreedsPage = () => {
     fetchBreeds();
   }, []);
 
+  const generateRandomColor = () => {
+    const letters = "0123456789ABCDEF";
+    let color = "#";
+    for (let i = 0; i < 6; i++) {
+      color += letters[Math.floor(Math.random() * 16)];
+    }
+    // Adicione a transparência no formato RGBA
+    color += "36"; // 36 é o valor hexadecimal para 0.21 em decimal
+  
+    return color;
+  };
+
   if (loading) {
     return <p>Loading...</p>;
   }
 
   return (
     <>
-      <header className="w-full h-11 flex items-center">
-        <div className="w-full px-32 flex flex-row items-center justify-between">
-          <div className="flex justify-center items-center">
-            <Link href={"/"}>
-              <DogLogo fillLogo={"white"} />
-            </Link>
-          </div>
-          <ul className="flex gap-8 text-xl items-center justify-center">
-            <li>
-              <Link href={""}>Home</Link>
-            </li>
-            <li>
-              <Link href={""}>Breeds</Link>
-            </li>
-            <li>
-              <Link href={""}>Random Photos</Link>
-            </li>
-          </ul>
-        </div>
-      </header>
-      <section className="flex flex-col md:ml-32 gap-16">
+      <Header />
+      <section className="flex flex-col md:mx-32 gap-16">
+        <h2
+          className="mt-20 text-6xl font-bold"
+          style={{
+            letterSpacing: "0.205em",
+            fontFamily: "'Fira Sans', sans-serif",
+          }}
+        >
+          Breeds
+        </h2>
+        <p
+          className="w-3/5 text-xl"
+          style={{ fontFamily: "'Fira Sans', sans-serif" }}
+        >
+          In addition to presenting breeds and photos, our page is also a place
+          where you can find amazing curiosities and helpful tips about dogs.
+          Want to know why dogs wag their tails? Or maybe you're seeking
+          guidance on training or health care? Here, you will find the answers
+          to your most curious questions and the practical information you need.
+          Feel free to explore, learn, and have fun on this page dedicated to
+          our adorable canine companions. We are constantly updating our content
+          to bring you new discoveries and keep you entertained. So, grab a cup
+          of tea, get cozy, and dive into this world full of joy, tenderness,
+          and lots of fun!
+        </p>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
           {dogBreeds?.map((breeds: IApiResponse) =>
-            breeds.breeds.map((breed) => <div key={breed.id}>{breed.name}</div>)
+            breeds.breeds.map((breed) => (
+              <Link
+                href={`/${breed.id}`}
+                key={breed.id}
+                style={{
+                  backgroundColor: generateRandomColor(),
+                  borderRadius: "16px",
+                  boxShadow: "0 4px 30px rgba(0, 0, 0, 0.1)",
+                  backdropFilter: "blur(4.7px)",
+                  border: "1px solid rgba(255, 255, 255, 0.211)",
+                }}
+                className=" flex flex-col items-center gap-2 justify-center"
+              >
+                <Image
+                  className="object-cover max-w-[200] max-h-[200] rounded-xl"
+                  src={breeds.url}
+                  width={200}
+                  height={200}
+                  alt="sadaw"
+                ></Image>
+                <p className="text-xl">{breed.name}</p>
+                <p className="w-3/4 text-sm text-center">{breed.bred_for}</p>
+              </Link>
+            ))
           )}
         </div>
       </section>
