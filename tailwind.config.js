@@ -9,11 +9,15 @@ module.exports = {
     extend: {
       colors: {
         dark: {
+          top404: '#2C2C2C',
+          bottom404: '#B7B7B7',
           backgroundHeader:"#000000",
           background:"#2C2C2C",
           text: "#FFFFFF", // Cor de texto para o tema dark (preto)
         },
         white:{
+          top404: '#979797',
+          bottom404: '#000000',
           backgroundHeader:"#F5F5F5",
           background:"#F5F5F5",
           text: "#FFFFFF", // Cor de texto para o tema dark (preto)
@@ -21,7 +25,7 @@ module.exports = {
         backgroundImage: {
           "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
           "gradient-conic":
-            "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
         },
       },
     },

@@ -7,7 +7,7 @@ const nextConfig = {
     URL_TO_API:process.env.URL_TO_API
   },
   images: {
-    domains: ["plus.unsplash.com", "unsplash.com"],
+    domains: ["plus.unsplash.com", "unsplash.com", "cdn2.thedogapi.com"],
     remotePatterns: [
       {
         protocol: "https",
@@ -20,6 +20,10 @@ const nextConfig = {
       {
         protocol: "https",
         hostname: "images.unsplash.com",
+      },
+      {
+        protocol: "https",
+        hostname: "cdn2.thedogapi.com",
       },
     ],
   },
