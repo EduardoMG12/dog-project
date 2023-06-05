@@ -2,36 +2,16 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import SvgContainer from "@/components/SVGs/SvgContainer";
-import DogLogo from "@/components/SVGs/DogLogo";
+import Header from "@/components/Header";
 
 
 export default function Home() {
   return (
     <>
-      <header className="w-full h-11 flex items-center">
-        <div className="w-full px-32 flex flex-row items-center justify-between">
-          <div className="flex justify-center items-center">
-            <Link href={"/"}>
-            <DogLogo fillLogo={"white"} />
-            </Link>
-          </div>
-          <ul className="flex gap-8 text-xl items-center justify-center">
-            <li>
-              <Link href={""}>Home</Link>
-            </li>
-            <li>
-              <Link href={""}>Breeds</Link>
-            </li>
-            <li>
-              <Link href={""}>Random Photos</Link>
-            </li>
-          </ul>
-        </div>
-      </header>
+      <Header/>
       <section className="h-screen flex justify-between">
-        <div className="w-1/2 pl-32">
+        <div className="w-1/2 px-32">
           <h1 className="text-8xl mt-32" style={{ letterSpacing: "0.285em" }}>
             NAMELOGO
           </h1>
