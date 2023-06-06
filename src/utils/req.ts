@@ -34,7 +34,7 @@ const fetchData = async ({pathApi}:IPropsFetchData): Promise<IBreed[] | undefine
         "Content-Type": "application/json",
         "x-api-key": process.env.THE_DOG_API,
       },
-      next: { revalidate: 8640 },
+      next: { revalidate: 86400 },
     });
 
     if (response.ok) {
