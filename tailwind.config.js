@@ -12,6 +12,8 @@ module.exports = {
           top404: '#2C2C2C',
           bottom404: '#B7B7B7',
           backgroundHeader:"#000000",
+          backgroundSearchInactive:"rgba(255, 255, 255, 0.21)",
+          backgroundSearchActive:"rgba(255, 255, 255, 1)",
           background:"#2C2C2C",
           text: "#FFFFFF", // Cor de texto para o tema dark (preto)
         },
