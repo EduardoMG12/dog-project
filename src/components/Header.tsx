@@ -5,7 +5,7 @@ import DogLogo from './SVGs/DogLogo'
 const Header = () => {
   return (
     <header className="w-full h-11 flex items-center" style={{fontFamily: "'Fira Sans', sans-serif"}}>
-    <div className="w-full px-32 flex flex-row items-center justify-between">
+    <div className="w-full px-8 md:px-32 flex flex-row items-center justify-between">
       <div className="flex justify-center items-center">
         <Link href={"/"}>
           <DogLogo fillLogo={"white"} />
