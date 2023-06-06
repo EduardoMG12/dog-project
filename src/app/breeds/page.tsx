@@ -2,7 +2,7 @@
 import React from "react";
 import Header from "@/components/Header";
 import { Metadata } from "next";
-import DogBreeds from "@/components/DogBreeds";
+import CardsDogsBreeds from "@/components/CardsDogsBreeds";
 
 interface IParams {
   params: { id: string };
@@ -45,7 +45,7 @@ export const BreedsPage = () => {
           of tea, get cozy, and dive into this world full of joy, tenderness,
           and lots of fun!
         </p>
-          <DogBreeds />
+          <CardsDogsBreeds />
       </section>
     </>
   );
