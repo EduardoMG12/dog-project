@@ -22,13 +22,14 @@ async function generateMetadata({ params }: IParams): Promise<Metadata> {
 
 export const BreedsPage = () => {
   const [dogBreeds, setDogBreeds] = useState<IBreed[] | undefined>();
+  const [showDogBreeds, setShowDogBreeds] = useState<IBreed[] | undefined>();
   const [loading, setLoading] = useState(true);
+  const [dogNumbers, setDogNumbers] = useState(10)
 
   useEffect(() => {
     const fetchBreeds = async () => {
       try {
         const data = await fetchData({pathApi: "v1/breeds"});
-        console.log(data);
         setDogBreeds(data);
         setLoading(false);
       } catch (error) {
@@ -36,9 +37,17 @@ export const BreedsPage = () => {
         setLoading(false);
       }
     };
-
     fetchBreeds();
+    
   }, []);
+  
+  useEffect(() => {
+    setShowDogBreeds(dogBreeds?.slice(0, dogNumbers));
+  }, [dogBreeds, dogNumbers]);
+  
+  const loadMoreBreeds = () => {
+    setDogNumbers(dogNumbers + 10)
+  };
 
   const generateRandomColor = () => {
     const letters = "0123456789ABCDEF";
@@ -58,7 +67,7 @@ export const BreedsPage = () => {
   return (
     <>
       <Header />
-      <section className="flex flex-col md:mx-32 gap-16">
+      <section className="flex flex-col mx-8 md:mx-32 gap-16">
         <h2
           className="mt-20 text-6xl font-bold"
           style={{
@@ -86,7 +95,7 @@ export const BreedsPage = () => {
         <div className="w-full flex items-end flex-col gap-5">
           <SearchForm/>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-            {dogBreeds?.map((breedDog: IBreed) => (
+            {showDogBreeds?.map((breedDog: IBreed) => (
               <Link
                 href={`/breeds/${breedDog.id}`}
                 key={breedDog.id}
@@ -113,6 +122,9 @@ export const BreedsPage = () => {
               </Link>
             ))}
           </div>
+            <button onClick={() => loadMoreBreeds()} className="self-center px-5 py-3 bg-white-text text-cyan-700 flex justify-center items-center rounded-xl">
+              <p>Loading more dogs</p>
+            </button>
         </div>
       </section>
     </>
