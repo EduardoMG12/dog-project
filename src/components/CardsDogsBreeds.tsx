@@ -7,7 +7,7 @@ import Image from 'next/image';
 
 const DogBreeds = () => {
 
-    const [dogBreeds, setDogBreeds] = useState<IBreed[] | undefined>();
+  const [dogBreeds, setDogBreeds] = useState<IBreed[] | undefined>();
   const [showDogBreeds, setShowDogBreeds] = useState<IBreed[] | undefined>();
   const [loading, setLoading] = useState(true);
   const [dogNumbers, setDogNumbers] = useState(10)
@@ -76,7 +76,7 @@ const DogBreeds = () => {
             alt="sadaw"
             placeholder="blur"
             blurDataURL={breedDog.image.url}
-          ></Image>
+          />
           <p className="text-xl">{breedDog.name}</p>
           <p className="w-3/4 text-sm text-center">{breedDog.bred_for}</p>
         </Link>
