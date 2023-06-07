@@ -1,10 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 "use client";
-import { IBreed } from "@/utils/req";
-import fetchData, {
-  IBreedDinamic,
-  IBreedWithImagesDinamic,
-} from "@/utils/reqDinamicDog";
+import fetchData, { IBreedWithImagesDinamic } from "@/utils/reqDinamicDog";
 import Image from "next/image";
 import React, { FC, useEffect, useState } from "react";
 import GhostDog from "./SVGs/GhostDog";
@@ -41,7 +37,7 @@ const DinamicDog: FC<IPropsDinamicDog> = ({ id }) => {
     return <p>Loading...</p>;
   }
   return (
-    <div className="w-full flex flex-col justify-between items-center gap-36">
+    <div className="w-full flex flex-col justify-between items-center gap-16 2xl:gap-36">
       <h1 className="text-6xl font-bold">{dogBreed?.breeds[0].name}</h1>
 
       <Image
@@ -55,18 +51,22 @@ const DinamicDog: FC<IPropsDinamicDog> = ({ id }) => {
       />
 
       <div className="flex w-full justify-around items-center">
-        <div className="flex flex-col justify-center items-center gap-4">
+        <div className="flex flex-col justify-center items-center gap-4 scale-50 2xl:scale-100">
           <BalanceScale />
           <p className="text-2xl">{dogBreed?.breeds[0].weight.metric} kgs</p>
         </div>
-        <div className="flex flex-col justify-center items-center gap-4">
+        <div className="flex flex-col justify-center items-center gap-4 scale-50 2xl:scale-100">
           <ScaleHeight />
-          <p className="text-2xl">{dogBreed?.breeds[0].height.metric} cm at the withers</p>
+          <p className="text-2xl">
+            {dogBreed?.breeds[0].height.metric} cm at the withers
+          </p>
         </div>
       </div>
       <div className="w-full flex flex-col justify-center items-center gap-4">
         <GhostDog />
-        <p className="text-2xl">{dogBreed?.breeds[0].life_span} years average life span</p>
+        <p className="text-2xl">
+          {dogBreed?.breeds[0].life_span} years average life span
+        </p>
       </div>
 
       <div className="flex justify-around items-center">
@@ -85,11 +85,11 @@ const DinamicDog: FC<IPropsDinamicDog> = ({ id }) => {
         <DogWithWithers />
       </div>
       <div className="flex flex-col items-center justify-center gap-5">
-      <h2 className="text-2xl font-bold">Categories</h2>
-      <p>{dogBreed?.breeds[0].bred_for}</p>
-      <p>{dogBreed?.breeds[0].breed_group}</p>
-      <p>{dogBreed?.breeds[0].origin}</p>
-      <p>{dogBreed?.breeds[0].temperament}</p>
+        <h2 className="text-2xl font-bold">Categories</h2>
+        <p>{dogBreed?.breeds[0].bred_for}</p>
+        <p>{dogBreed?.breeds[0].breed_group}</p>
+        <p>{dogBreed?.breeds[0].origin}</p>
+        <p>{dogBreed?.breeds[0].temperament}</p>
       </div>
     </div>
   );

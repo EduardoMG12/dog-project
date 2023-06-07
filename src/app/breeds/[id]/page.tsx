@@ -1,8 +1,7 @@
 // import fetchData, { IBreed } from '@/utils/req';
-import React, { FC, useEffect, useState } from "react";
+import React, { FC } from "react";
 import Header from "@/components/Header";
 import DinamicDog from "@/components/DinamicDog";
-import { Metadata } from "next";
 import fetchData, { IBreed } from "@/utils/req";
 
 interface IParams {

@@ -31,7 +31,7 @@ export const BreedsPage = () => {
           Breeds
         </h2>
         <p
-          className="w-3/5 text-xl"
+          className="w-5/6 2xl:w-3/5 text-xl"
           style={{ fontFamily: "'Fira Sans', sans-serif" }}
         >
           In addition to presenting breeds and photos, our page is also a place
