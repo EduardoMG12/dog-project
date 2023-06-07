@@ -22,12 +22,11 @@ module.exports = {
           bottom404: '#000000',
           backgroundHeader:"#F5F5F5",
           background:"#F5F5F5",
-          text: "#FFFFFF", // Cor de texto para o tema dark (preto)
+          text: "#000000", // Cor de texto para o tema dark (preto)
         },
         backgroundImage: {
           "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-          "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+          "gradient-conic":"conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
         },
       },
     },
