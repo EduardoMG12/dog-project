@@ -23,7 +23,7 @@ export interface IBreed {
   };
 }
 
-interface IPropsFetchData{
+export interface IPropsFetchData{
   pathApi:string
 }
 
