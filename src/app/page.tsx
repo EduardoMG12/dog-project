@@ -1,35 +1,34 @@
 /* eslint-disable react/no-unescaped-entities */
 "use client";
-
 import Image from "next/image";
 import SvgContainer from "@/components/SVGs/SvgContainer";
 import Header from "@/components/Header";
-
 
 export default function Home() {
   return (
     <>
       <Header/>
-      <section className="h-screen flex justify-between">
-        <div className="w-1/2 px-32">
-          <h1 className="text-8xl mt-32" style={{ letterSpacing: "0.285em" }}>
+      <section className="h-screen flex justify-between flex-col gap-10 2xl:flex-row">
+        <div className="w-1/2 mx-8 md:mx-32">
+          <h1 className="text-5xl md:text-8xl mt-32" style={{ letterSpacing: "0.285em" }}>
             NAMELOGO
           </h1>
-          <h2 className="text-2xl mt-16" style={{ letterSpacing: "0.215em" }}>
+          <h2 className="text-xl w-full md:text-2xl mt-16" style={{ letterSpacing: "0.215em" }}>
             conhecendo mais sobre seu fiel companheiro
           </h2>
-          <div className="mt-11 w-full relative h-96 invisible xl:visible">
+          <div className="mt-11 w-full relative h-96 hidden xl:block">
             <SvgContainer />
           </div>
         </div>
-        <div className="w-1/2 h-full flex items-center justify-center">
+        <div className=" h-full flex items-center justify-center w-full 2xl:w-1/2">
           {/* <div className="mt-4 h-3/4 w-full" style={{borderRadius:"1600px 1000px 800px 1800px / 1600px 100px 550px 650px", backgroundImage: "url(https://unsplash.com/photos/2l0CWTpcChI)"}}></div> */}
           <Image
-            className="mt-4 h-full w-full"
+            className="mb-10 mt-4 h-full w-full  2xl:block"
             alt="dog image"
             width={1000}
             height={1000}
             style={{
+              
               borderRadius:
                 "1600px 1000px 800px 1800px / 1600px 100px 550px 650px",
             }}
@@ -38,7 +37,7 @@ export default function Home() {
         </div>
       </section>
       <div></div>
-      <section className="flex flex-col md:ml-32 gap-16">
+      <section className="flex flex-col mx-8 md:mx-32 gap-16">
         <div className="flex flex-col gap-8">
           <h3 className="text-2xl font-bold">
             Explore the fascinating world of our best canine friends!

@@ -1,35 +1,28 @@
 // import fetchData, { IBreed } from '@/utils/req';
-import React, { FC, useEffect, useState } from "react";
+import React, { FC } from "react";
 import Header from "@/components/Header";
 import DinamicDog from "@/components/DinamicDog";
-import { Metadata } from "next";
-import fetchData, { IBreed } from "@/utils/req";
+import  {IBreed, fetchDinamicDogs } from "@/utils/req";
 
 interface IParams {
-  id: any;
   params: { id: string };
 }
 
 interface IPropsDinamicDogPage {
-  params: IParams;
+  params: { id: string };
   searchParams: { id: string };
 }
 
 export async function generateMetadata({ params }: IParams) {
-    const fetchBreeds = async () => {
-      try {
-        const data = await fetchData({pathApi: `v1/breeds/${params.id}`});
-        return data
-     } catch (error) {
-        console.log("Error fetching dog breeds:", error);
-      }
+  const getData = async () => {
+    const dinamicDog = await fetchDinamicDogs(params.id)
+    return dinamicDog
   };
-  fetchBreeds()
-  const dog = await fetchBreeds()
+  const dog = await getData()
   return {
-    title: dog?.name,
+    title: dog?.breeds[0].name,
     description:
-      `${dog?.name} description`,
+      `${dog?.breeds[0].name} description`
   };
 }
 
