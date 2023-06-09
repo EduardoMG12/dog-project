@@ -1,10 +1,8 @@
 /* eslint-disable react/no-unescaped-entities */
 "use client";
-
 import Image from "next/image";
 import SvgContainer from "@/components/SVGs/SvgContainer";
 import Header from "@/components/Header";
-
 
 export default function Home() {
   return (
@@ -39,7 +37,7 @@ export default function Home() {
         </div>
       </section>
       <div></div>
-      <section className="flex flex-col md:ml-32 gap-16">
+      <section className="flex flex-col mx-8 md:mx-32 gap-16">
         <div className="flex flex-col gap-8">
           <h3 className="text-2xl font-bold">
             Explore the fascinating world of our best canine friends!

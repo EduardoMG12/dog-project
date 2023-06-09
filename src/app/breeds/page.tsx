@@ -1,7 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 import React from "react";
 import Header from "@/components/Header";
-import { Metadata } from "next";
+import { Metadata, NextPage } from "next";
 import CardsDogsBreeds from "@/components/CardsDogsBreeds";
 
 interface IParams {
@@ -16,7 +16,7 @@ export async function generateMetadata({ params }: IParams): Promise<Metadata> {
   };
 }
 
-export const BreedsPage = () => {
+const BreedsPage: NextPage = () => {
   return (
     <>
       <Header />

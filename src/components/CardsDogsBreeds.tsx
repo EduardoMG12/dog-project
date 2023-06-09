@@ -1,5 +1,5 @@
 "use client"
-import fetchData, { IBreed } from '@/utils/req';
+import  {fetchBreeds ,  IBreed } from '@/utils/req';
 import React, { useEffect, useState } from 'react'
 import SearchForm from './SearchForm';
 import Link from 'next/link';
@@ -7,24 +7,24 @@ import Image from 'next/image';
 
 const DogBreeds = () => {
 
-  const [dogBreeds, setDogBreeds] = useState<IBreed[] | undefined>();
+  const [dogBreeds, setDogBreeds] = useState<IBreed[] | void>();
   const [showDogBreeds, setShowDogBreeds] = useState<IBreed[] | undefined>();
   const [loading, setLoading] = useState(true);
   const [dogNumbers, setDogNumbers] = useState(10)
 
-  useEffect(() => {
-    const fetchBreeds = async () => {
-      try {
-        const data = await fetchData({pathApi: "v1/breeds"});
-        setDogBreeds(data);
-        setLoading(false);
-      } catch (error) {
-        console.log("Error fetching dog breeds:", error);
-        setLoading(false);
-      }
-    };
-    fetchBreeds();
-    
+ useEffect(() => {
+  const getData = async () => {
+    const data = await fetchBreeds()
+    if(data){
+      setDogBreeds(data)
+      setLoading(false)
+    }
+    else{
+      console.log("Error fetching dog breeds:");
+      setLoading(false);
+    }
+  }
+  getData()
   }, []);
   
   useEffect(() => {
