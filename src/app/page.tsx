@@ -8,9 +8,9 @@ export default function Home() {
   return (
     <>
       <Header/>
-      <section className="h-screen flex justify-between flex-col gap-10 2xl:flex-row">
+      <section className="mb-10 sm:mb-0 sm:h-screen flex justify-between flex-col gap-10 2xl:flex-row">
         <div className="w-1/2 mx-8 md:mx-32">
-          <h1 className="text-5xl md:text-8xl mt-32" style={{ letterSpacing: "0.285em" }}>
+          <h1 className="text-2xl sm:text-5xl md:text-8xl mt-32" style={{ letterSpacing: "0.285em" }}>
           DOGLOPEDIA
           </h1>
           <h2 className="text-xl w-full md:text-2xl mt-16" style={{ letterSpacing: "0.215em" }}>
@@ -20,9 +20,9 @@ export default function Home() {
             <SvgContainer />
           </div>
         </div>
-        <div className=" h-full flex items-center justify-center w-full 2xl:w-1/2">
+        <div className=" items-center justify-center hidden w-0  h-0 sm:flex sm:h-full  sm:w-full 2xl:w-1/2">
           <Image
-            className="mb-10 mt-4 h-full w-full  2xl:block"
+            className="sm:mb-10 sm:mt-4 h-full w-full  2xl:block"
             alt="dog image"
             width={1000}
             height={1000}
