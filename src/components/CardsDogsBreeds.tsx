@@ -53,7 +53,7 @@ const DogBreeds = () => {
 
   return (
     <div className="w-full flex items-end flex-col gap-5">
-    <SearchForm/>
+    <SearchForm className='hidden'/>
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
       {showDogBreeds?.map((breedDog: IBreed) => (
         <Link
