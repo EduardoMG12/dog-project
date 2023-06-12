@@ -20,6 +20,7 @@ const DogBreeds = () => {
       setLoading(false)
     }
     else{
+      console.log("Error fetching dog breeds:");
       setLoading(false);
     }
   }

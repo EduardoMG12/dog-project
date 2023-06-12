@@ -4,6 +4,7 @@ import Header from "@/components/Header";
 import DinamicDog from "@/components/DinamicDog";
 import { fetchDinamicDogs } from "@/utils/req";
 
+
 interface IParams {
   params: { id: string };
 }

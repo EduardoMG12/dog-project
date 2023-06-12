@@ -21,7 +21,6 @@ export default function Home() {
           </div>
         </div>
         <div className=" h-full flex items-center justify-center w-full 2xl:w-1/2">
-          {/* <div className="mt-4 h-3/4 w-full" style={{borderRadius:"1600px 1000px 800px 1800px / 1600px 100px 550px 650px", backgroundImage: "url(https://unsplash.com/photos/2l0CWTpcChI)"}}></div> */}
           <Image
             className="mb-10 mt-4 h-full w-full  2xl:block"
             alt="dog image"
