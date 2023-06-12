@@ -24,7 +24,6 @@ const DinamicDog: FC<IPropsDinamicDog> = ({id}:IPropsDinamicDog) => {
       setDogBreed(dinamicDog)
     }
     getData()
-    console.log(dogBreed)
     setLoading(false)
     }, []);
 
@@ -85,12 +84,36 @@ const DinamicDog: FC<IPropsDinamicDog> = ({id}:IPropsDinamicDog) => {
           </p>
           <DogWithWithers />
         </div>
-        <div className="flex flex-col items-center justify-center gap-5">
+        <div className="flex flex-col items-center justify-center gap-5 mb-8">
           <h2 className="text-2xl font-bold">Categories</h2>
-          <p>{dogBreed?.breeds[0].bred_for}</p>
-          <p>{dogBreed?.breeds[0].breed_group}</p>
-          <p>{dogBreed?.breeds[0].origin}</p>
-          <p>{dogBreed?.breeds[0].temperament}</p>
+        {
+          dogBreed?.breeds[0].breed_group
+          ?
+          <p>Category1: {dogBreed?.breeds[0].breed_group}</p>
+          :
+          null
+        }
+        {
+          dogBreed?.breeds[0].bred_for
+          ?
+          <p>Category2: {dogBreed?.breeds[0].bred_for}</p>
+          :
+          null
+        }
+        {
+          dogBreed?.breeds[0].country_code
+          ?
+          <p>origin: {dogBreed?.breeds[0].country_code}</p>
+          :
+          null
+        }
+        {
+          dogBreed?.breeds[0].temperament
+          ?
+          <p>Characteristics: {dogBreed?.breeds[0].temperament}</p>
+          :
+          null
+        }
         </div>
       </div>
 

@@ -11,7 +11,7 @@ export default function Home() {
       <section className="h-screen flex justify-between flex-col gap-10 2xl:flex-row">
         <div className="w-1/2 mx-8 md:mx-32">
           <h1 className="text-5xl md:text-8xl mt-32" style={{ letterSpacing: "0.285em" }}>
-            NAMELOGO
+          DOGLOPEDIA
           </h1>
           <h2 className="text-xl w-full md:text-2xl mt-16" style={{ letterSpacing: "0.215em" }}>
             conhecendo mais sobre seu fiel companheiro
@@ -37,7 +37,7 @@ export default function Home() {
         </div>
       </section>
       <div></div>
-      <section className="flex flex-col mx-8 md:mx-32 gap-16">
+      <section className="flex flex-col mx-8 md:mx-32 gap-16 mb-8">
         <div className="flex flex-col gap-8">
           <h3 className="text-2xl font-bold">
             Explore the fascinating world of our best canine friends!

@@ -1,5 +1,5 @@
 "use client"
-import React, { CSSProperties, FC, useRef, useState } from "react";
+import React, { CSSProperties, FC, useState } from "react";
 
 interface IPropsSearchForm{
   style?:CSSProperties,
@@ -10,7 +10,7 @@ interface IPropsSearchForm{
 const SearchForm:FC<IPropsSearchForm> = ({style, className}) => {
   const [valueSearch, setValueSearch] = useState<string>("")
   return (
-    <form className="relative w-80 bg-green-500 rounded-md">
+    <form className={`relative w-80 bg-green-500 rounded-md ${className}`} style={style}>
       <label htmlFor="search" className="sr-only">
         Search for stuff
       </label>
