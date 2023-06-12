@@ -45,6 +45,8 @@ const BreedsPage: NextPage = () => {
           of tea, get cozy, and dive into this world full of joy, tenderness,
           and lots of fun!
         </p>
+      </section>
+      <section className="flex justify-center items-center mt-8 mx-8 md:mx-32 gap-16">
           <CardsDogsBreeds />
       </section>
     </>
